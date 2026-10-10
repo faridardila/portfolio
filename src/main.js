@@ -28,11 +28,16 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-// Navegación suave con Lenis al hacer clic en enlaces internos (#about, #projects)
+// Navegación suave con Lenis al hacer clic en enlaces internos (#about, #projects, #)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
     const hash = anchor.getAttribute('href');
-    if (!hash || hash === '#') return;
+    if (!hash) return;
+    if (hash === '#' || hash === '#top') {
+      e.preventDefault();
+      lenis.scrollTo(0, { offset: 0 });
+      return;
+    }
     const target = document.querySelector(hash);
     if (target) {
       e.preventDefault();

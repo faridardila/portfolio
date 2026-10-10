@@ -1007,9 +1007,9 @@ section {
   }
 
   .hero-bio {
-    font-size: 0.94rem;
+    font-size: 0.84rem;
     line-height: 1.6;
-    text-align: left;
+    text-align: justify;
     margin-top: 12px;
   }
 
