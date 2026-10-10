@@ -186,11 +186,97 @@ if (expImg && expImages[0]) {
 
 let activeIndex = -1;
 
+function setActiveExperience(targetIndex) {
+  if (targetIndex < 0 || targetIndex >= timelineItems.length) return;
+  if (targetIndex === activeIndex) return;
+  activeIndex = targetIndex;
+
+  timelineItems.forEach((item, index) => {
+    if (index === targetIndex) {
+      item.classList.add('active');
+
+      // Cambiar la foto suavemente con fundido
+      const newImgSrc = item.dataset.image;
+      if (newImgSrc && expImg && expImg.src !== newImgSrc) {
+        expImg.style.opacity = '0.3';
+        setTimeout(() => {
+          expImg.src = newImgSrc;
+          expImg.style.opacity = '1';
+        }, 150);
+      }
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
+// Soporte para interactividad táctil o clic directo en cualquier ítem
+timelineItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    setActiveExperience(index);
+  });
+});
+
+// Soporte para gesto de deslizamiento horizontal táctil (Swipe) en móvil
+const expContainer = document.querySelector('.experience-container');
+if (expContainer) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  expContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  expContainer.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const diffX = touchStartX - touchEndX;
+    const diffY = touchStartY - touchEndY;
+
+    // Si el usuario desliza horizontalmente (swipe) entre los ítems
+    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
+        // Deslizar izquierda -> siguiente logro
+        const nextIndex = Math.min(timelineItems.length - 1, activeIndex + 1);
+        setActiveExperience(nextIndex);
+      } else {
+        // Deslizar derecha -> logro anterior
+        const prevIndex = Math.max(0, activeIndex - 1);
+        setActiveExperience(prevIndex);
+      }
+    }
+  }, { passive: true });
+}
+
+// En móvil: activación suave al hacer scroll conforme cada ítem entra en vista
+if ('IntersectionObserver' in window) {
+  const expObserver = new IntersectionObserver((entries) => {
+    if (window.innerWidth > 768) return; // En escritorio se usa el pinning de Lenis
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = Array.from(timelineItems).indexOf(entry.target);
+        if (idx !== -1) {
+          setActiveExperience(idx);
+        }
+      }
+    });
+  }, {
+    rootMargin: '-15% 0px -40% 0px',
+    threshold: 0.1
+  });
+
+  timelineItems.forEach(item => expObserver.observe(item));
+}
+
 function updateExperienceScroll() {
   if (!expSection || timelineItems.length === 0) return;
 
+  // En móvil la altura es natural (auto) y se gestiona mediante observer, tap y swipe
+  if (window.innerWidth <= 768) return;
+
   const rect = expSection.getBoundingClientRect();
-  const topStickyOffset = window.innerWidth <= 768 ? 70 : 85;
+  const topStickyOffset = 85;
   const totalTravel = rect.height - window.innerHeight;
 
   if (totalTravel <= 0) return;
@@ -200,30 +286,10 @@ function updateExperienceScroll() {
   const progress = Math.max(0, Math.min(1, scrolled / totalTravel));
 
   const count = timelineItems.length;
-  // Mapeamos el progreso al índice del trabajo (0, 1, 2, 3...)
+  // Mapeamos el progreso al índice del trabajo (0, 1, 2)
   const targetIndex = Math.min(count - 1, Math.floor(progress * count));
 
-  if (targetIndex !== activeIndex) {
-    activeIndex = targetIndex;
-    
-    timelineItems.forEach((item, index) => {
-      if (index === targetIndex) {
-        item.classList.add('active');
-        
-        // Cambiar la foto suavemente con fundido
-        const newImgSrc = item.dataset.image;
-        if (newImgSrc && expImg && expImg.src !== newImgSrc) {
-          expImg.style.opacity = '0.3';
-          setTimeout(() => {
-            expImg.src = newImgSrc;
-            expImg.style.opacity = '1';
-          }, 150);
-        }
-      } else {
-        item.classList.remove('active');
-      }
-    });
-  }
+  setActiveExperience(targetIndex);
 }
 
 // Conectamos el evento de Lenis para sincronizar la animación frame por frame

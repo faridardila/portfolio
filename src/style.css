@@ -992,6 +992,8 @@ section {
   .last-name {
     bottom: 12px;
     right: 18px;
+    z-index: 10; /* Muy por delante de la foto en móvil (hero-portrait es z-index: 3) */
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   }
 
   .hero-details {
@@ -1083,21 +1085,29 @@ section {
 
   /* 5. Sección de Experiencia */
   .experience {
-    margin-top: 90px;
-    height: 260vh;
+    margin-top: 60px;
+    margin-bottom: 24px;
+    height: auto !important; /* Altura natural: elimina por completo el espacio vacío gigante */
+    position: relative;
   }
 
   .experience-container {
-    top: 70px;
+    position: relative !important;
+    top: auto !important;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
   }
 
   .experience-media {
     height: 180px;
     width: 100%;
     flex-shrink: 0;
+    position: sticky;
+    top: 65px;
+    z-index: 10;
+    background: var(--color-bg);
+    padding-bottom: 6px;
   }
 
   .experience-media .image-wrapper {
@@ -1107,30 +1117,34 @@ section {
   .experience-media img {
     height: 180px;
     border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   }
 
   .experience-header {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .experience-header h2 {
-    font-size: 30px;
-    margin-bottom: 6px;
+    font-size: 28px;
+    margin-bottom: 4px;
   }
 
   .experience-intro {
     font-size: 13px;
+    line-height: 1.5;
     max-width: 100%;
   }
 
   .timeline-list {
-    margin-top: 12px;
+    margin-top: 10px;
     padding-left: 18px;
   }
 
   .timeline-item {
-    margin-bottom: 16px;
-    padding: 6px 0;
+    margin-bottom: 18px;
+    padding: 8px 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .timeline-title {
@@ -1146,18 +1160,19 @@ section {
   }
 
   .timeline-body p {
-    font-size: 12.5px;
+    font-size: 12.8px;
+    line-height: 1.55;
     max-width: 100%;
   }
 
   .timeline-item.active .timeline-body {
-    max-height: 200px;
+    max-height: 220px;
     margin-top: 8px;
   }
 
   /* 6. Constelación de Idiomas */
   .languages {
-    margin: 80px auto 60px;
+    margin: 40px auto 40px;
     padding: 0;
   }
 
