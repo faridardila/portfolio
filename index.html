@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farid Ardila | Portfolio</title>
+</head>
+
+<body>
+  <!-- PANTALLA DE INICIO (WELCOME SCREEN) -->
+  <div id="welcome-screen" class="welcome-screen">
+    <div class="welcome-content">
+      <span class="welcome-text" aria-live="polite"></span>
+      <span class="welcome-cursor" aria-hidden="true">|</span>
+    </div>
+    <button class="welcome-scroll-btn" type="button" aria-label="Scroll to main content">
+      <span class="scroll-text">scroll</span>
+      <svg class="scroll-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <header class="navbar">
+    <a href="/" class="logo" aria-label="Home">
+      <img src="/src/assets/logo.png" alt="Farid Ardila Logo" />
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="/src/assets/cv2.pdf" target="_blank" rel="noopener noreferrer">cv</a></li>
+        <li><a href="mailto:faridardila22@gmail.com">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="about" class="hero">
+      <div class="hero-card">
+        <img src="/src/assets/hero-waves.svg" alt="" class="hero-waves" aria-hidden="true" />
+
+        <h1 class="hero-title">
+          <span class="first-name">Farid</span>
+          <span class="last-name">Ardila</span>
+        </h1>
+
+        <img src="/src/assets/portrait.png" alt="Portrait of Farid Ardila" class="hero-portrait" />
+      </div>
+      <div class="hero-details">
+        <div class="hero-roles">
+          <p>software developer</p>
+          <p>systems engineer</p>
+        </div>
+        <p class="hero-bio">
+          Systems and Computing Engineering student at Universidad Nacional de Colombia, passionate about software engineering, system architecture, and language learning.
+Hands-on experience in full-stack development, business process automation, and scalable software solutions (Node.js, Java, Python, React, SQL, networking & cloud tools). Currently diving deeper into Machine Learning algorithms and data-driven systems to bridge traditional software engineering with intelligent applications.
+        </p>
+      </div>
+    </section>
+
+
+    <section id="projects" class="projects">
+      <div class="projects-title-section reveal">
+        <h2 class="projects-title">Check out my&nbsp; <span class="script-text project-typewriter">work</span><span class="typewriter-cursor" aria-hidden="true">|</span></h2>
+        <p class="projects-subtitle">Focused on creativity</p>
+      </div>
+
+      <div class="projects-grid">
+        <a href="https://github.com/10scar/sistemas-de-informacion-senselife" target="_blank" rel="noopener noreferrer" class="project-card featured reveal">
+          <div class="card-media">
+            <img src="/src/assets/senselife.png" alt="SenseLife preview" />
+          </div>
+          <div class="card-content">
+            <h3>Senselife</h3>
+            <p>Information system focused on real-time heart rate and respiratory rate monitoring for critically ill newborns.</p>
+            <div class="card-tags">
+              <span>PHP</span>
+              <span>FastAPI</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://github.com/cristoferOrdonez/Aquanova-FrontEnd" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+          <div class="card-media">
+            <img src="/src/assets/aquanova.png" alt="Aquanova preview" />
+          </div>
+          <div class="card-content">
+            <h3>Aquanova</h3>
+            <p>Territorial management and digital twin platform for water resource conservation. Integrates interactive GIS mapping, data analytics, and geospatial visualization.</p>
+            <div class="card-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>GIS</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://github.com/YonyChaparro/JavaLi" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+          <div class="card-media">
+            <img src="/src/assets/posya.png" alt="PosYa! preview" />
+          </div>
+          <div class="card-content">
+            <h3>PosYa!</h3>
+            <p>Comprehensive desktop Point of Sale (POS) system for small businesses in Colombia. Automates sales, inventory management, and electronic invoicing.</p>
+            <div class="card-tags">
+              <span>Typescript</span>
+              <span>Express</span>
+              <span>Factus API</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
+      <div class="experience-container">
+
+        <!-- COLUMNA IZQUIERDA: La imagen pegajosa (Sticky) -->
+        <div class="experience-media reveal">
+          <div class="image-wrapper">
+            <img src="/src/assets/hackathon.png" alt="Hackathon achievement" class="exp-img" id="current-exp-img" />
+          </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Encabezado + Timeline -->
+        <div class="experience-content reveal">
+
+          <!-- Encabezado con Título + Bio -->
+          <div class="experience-header">
+            <h2 class="section-title">
+              My <span class="script-text exp-typewriter">experience</span><span class="typewriter-cursor" aria-hidden="true">|</span>
+            </h2>
+            <p class="experience-intro">
+              Systems engineer focused on software development, hackathons, and building high-impact solutions.
+            </p>
+          </div>
+
+          <!-- Lista tipo Timeline con la línea guía continua -->
+          <div class="timeline-list">
+
+            <!-- Ítem 1 (Inactivo) -->
+            <article class="timeline-item" data-image="/src/assets/1cchampionship.jpg">
+              <h3 class="timeline-title">Professionals Championship - Saint Petersburg</h3>
+              <div class="timeline-body">
+                <p>Awarded 2nd Place globally at the Professionals Championship 2024 Finals in Saint Petersburg, competing in the Business Process Automation for Organizations skill category.</p>
+              </div>
+            </article>
+
+            <!-- Ítem 2 (Activo por defecto) -->
+             <article class="timeline-item" data-image="/src/assets/second_championship.png">
+              <h3 class="timeline-title">1C International Programming Contest - Moscow</h3>
+              <div class="timeline-body">
+                <p>Hosted in Moscow, the final brought together 230 top students selected from over 5,000 participants across regional and national rounds. The contest was based in the field of business process automation and IT education.</p>
+              </div>
+            </article>
+            
+            <!-- Ítem 3 -->
+            <article class="timeline-item active" data-image="/src/assets/hackathon.png">
+              <h3 class="timeline-title">Innova-TIC 2025 Hackathon Winner</h3>
+              <div class="timeline-body">
+                <p>Winner at the Innova-TIC Bogotá Hackathon 2025, organized by Young Water Solutions and Cewas in partnership with the Bogotá Water and Sewerage Company (EAAB).</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN IDIOMAS (Constelación de Nodos) -->
+    <section id="languages" class="languages reveal">
+      <div class="languages-container">
+        <!-- Lienzo SVG para las conexiones discontinuas que enlazan los nodos -->
+        <svg class="constellation-svg" aria-hidden="true"></svg>
+
+        <!-- Nodo Central: Título + Descripción -->
+        <div class="languages-hub">
+          <h2 class="languages-title">
+            bored? learn <br />
+            <span class="script-text lang-typewriter">languages</span><span class="typewriter-cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="languages-desc">
+            Passionate about learning languages, I have found a desire to share my love with people by teaching how to aquire a language in different ways, integrating it into your life.
+          </p>
+        </div>
+
+        <!-- Nodos de Banderas Circulares -->
+        <div class="flag-node flag-turkey" data-flag="turkey" data-name="Türkçe">
+          <div class="flag-circle">
+            <img src="/src/assets/turkish_flag.webp" alt="Flag of Turkey" />
+          </div>
+          <span class="flag-tooltip">Türkçe</span>
+        </div>
+
+        <div class="flag-node flag-usa" data-flag="usa" data-name="English">
+          <div class="flag-circle">
+            <img src="/src/assets/usa_flag.png" alt="Flag of the United States" />
+          </div>
+          <span class="flag-tooltip">English</span>
+        </div>
+
+        <div class="flag-node flag-italy" data-flag="italy" data-name="Italiano">
+          <div class="flag-circle">
+            <img src="/src/assets/italy_flag.png" alt="Flag of Italy" />
+          </div>
+          <span class="flag-tooltip">Italiano</span>
+        </div>
+
+        <div class="flag-node flag-france" data-flag="france" data-name="Français">
+          <div class="flag-circle">
+            <img src="/src/assets/france-flag.webp" alt="Flag of France" />
+          </div>
+          <span class="flag-tooltip">Français</span>
+        </div>
+
+        <div class="flag-node flag-spain" data-flag="spain" data-name="Español">
+          <div class="flag-circle">
+            <img src="/src/assets/spain_flag.webp" alt="Flag of Spain" />
+          </div>
+          <span class="flag-tooltip">Español</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUESINA INFINITA (create · innovate · implement) -->
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-accent">create</span>
+          <span class="marquee-dot">·</span>
+          <span>innovate</span>
+          <span class="marquee-dot">·</span>
+          <span>implement</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-accent">create</span>
+          <span class="marquee-dot">·</span>
+          <span>innovate</span>
+          <span class="marquee-dot">·</span>
+          <span>implement</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-accent">create</span>
+          <span class="marquee-dot">·</span>
+          <span>innovate</span>
+          <span class="marquee-dot">·</span>
+          <span>implement</span>
+          <span class="marquee-dot">·</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-accent">create</span>
+          <span class="marquee-dot">·</span>
+          <span>innovate</span>
+          <span class="marquee-dot">·</span>
+          <span>implement</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-accent">create</span>
+          <span class="marquee-dot">·</span>
+          <span>innovate</span>
+          <span class="marquee-dot">·</span>
+          <span>implement</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-accent">create</span>
+          <span class="marquee-dot">·</span>
+          <span>innovate</span>
+          <span class="marquee-dot">·</span>
+          <span>implement</span>
+          <span class="marquee-dot">·</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer reveal">
+    <p class="footer-copy">© 2026 Farid Ardila. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/faridardila/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <a href="https://github.com/faridardila" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+      </a>
+      <a href="mailto:faridardila22@gmail.com" aria-label="Email" class="social-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="20" height="16" x="2" y="4" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
