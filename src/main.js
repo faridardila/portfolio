@@ -3,6 +3,11 @@ import 'lenis/dist/lenis.css'
 import Lenis from 'lenis'
 import cvPdf from './assets/cv2.pdf'
 
+// Importación de imágenes de experiencia para empaquetado de producción en Vite
+import expImg1 from './assets/1cchampionship.jpg'
+import expImg2 from './assets/second_championship.png'
+import expImg3 from './assets/hackathon.png'
+
 const cvLink = document.querySelector('.nav-links a[href*="cv"]');
 if (cvLink) {
   cvLink.href = cvPdf;
@@ -166,6 +171,18 @@ initWelcomeScreen();
 const expSection = document.querySelector('.experience');
 const timelineItems = document.querySelectorAll('.timeline-item');
 const expImg = document.querySelector('#current-exp-img');
+
+// Asignamos las URLs empaquetadas por Vite a cada ítem del timeline
+const expImages = [expImg1, expImg2, expImg3];
+timelineItems.forEach((item, index) => {
+  if (expImages[index]) {
+    item.dataset.image = expImages[index];
+  }
+});
+
+if (expImg && expImages[0]) {
+  expImg.src = expImages[0];
+}
 
 let activeIndex = -1;
 
