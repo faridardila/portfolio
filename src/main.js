@@ -184,7 +184,7 @@ if (expImg && expImages[0]) {
   expImg.src = expImages[0];
 }
 
-let activeIndex = -1;
+let activeIndex = 0;
 
 function setActiveExperience(targetIndex) {
   if (targetIndex < 0 || targetIndex >= timelineItems.length) return;
@@ -210,69 +210,17 @@ function setActiveExperience(targetIndex) {
   });
 }
 
-// Soporte para interactividad táctil o clic directo en cualquier ítem
+// En móvil y escritorio: abrir y cambiar de logro directamente al hacer tap o clic
 timelineItems.forEach((item, index) => {
   item.addEventListener('click', () => {
     setActiveExperience(index);
   });
 });
 
-// Soporte para gesto de deslizamiento horizontal táctil (Swipe) en móvil
-const expContainer = document.querySelector('.experience-container');
-if (expContainer) {
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  expContainer.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  expContainer.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    const diffX = touchStartX - touchEndX;
-    const diffY = touchStartY - touchEndY;
-
-    // Si el usuario desliza horizontalmente (swipe) entre los ítems
-    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
-      if (diffX > 0) {
-        // Deslizar izquierda -> siguiente logro
-        const nextIndex = Math.min(timelineItems.length - 1, activeIndex + 1);
-        setActiveExperience(nextIndex);
-      } else {
-        // Deslizar derecha -> logro anterior
-        const prevIndex = Math.max(0, activeIndex - 1);
-        setActiveExperience(prevIndex);
-      }
-    }
-  }, { passive: true });
-}
-
-// En móvil: activación suave al hacer scroll conforme cada ítem entra en vista
-if ('IntersectionObserver' in window) {
-  const expObserver = new IntersectionObserver((entries) => {
-    if (window.innerWidth > 768) return; // En escritorio se usa el pinning de Lenis
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const idx = Array.from(timelineItems).indexOf(entry.target);
-        if (idx !== -1) {
-          setActiveExperience(idx);
-        }
-      }
-    });
-  }, {
-    rootMargin: '-15% 0px -40% 0px',
-    threshold: 0.1
-  });
-
-  timelineItems.forEach(item => expObserver.observe(item));
-}
-
 function updateExperienceScroll() {
   if (!expSection || timelineItems.length === 0) return;
 
-  // En móvil la altura es natural (auto) y se gestiona mediante observer, tap y swipe
+  // En móvil no hay animación de scroll; la sección se navega por tap
   if (window.innerWidth <= 768) return;
 
   const rect = expSection.getBoundingClientRect();

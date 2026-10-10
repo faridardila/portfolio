@@ -964,7 +964,7 @@ section {
 
   /* 3. Hero Section */
   .hero {
-    margin-top: 100px;
+    margin-top: 180px;
   }
 
   .hero-card {
@@ -1097,17 +1097,15 @@ section {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    min-height: auto !important;
   }
 
   .experience-media {
     height: 180px;
     width: 100%;
     flex-shrink: 0;
-    position: sticky;
-    top: 65px;
-    z-index: 10;
-    background: var(--color-bg);
-    padding-bottom: 6px;
+    position: relative;
+    top: auto;
   }
 
   .experience-media .image-wrapper {
@@ -1145,6 +1143,8 @@ section {
     padding: 8px 0;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
   }
 
   .timeline-title {
