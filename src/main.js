@@ -36,7 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(hash);
     if (target) {
       e.preventDefault();
-      lenis.scrollTo(target, { offset: -90 });
+      lenis.scrollTo(target, { offset: -75 });
     }
   });
 });
@@ -190,7 +190,7 @@ function updateExperienceScroll() {
   if (!expSection || timelineItems.length === 0) return;
 
   const rect = expSection.getBoundingClientRect();
-  const topStickyOffset = 100;
+  const topStickyOffset = 85;
   const totalTravel = rect.height - window.innerHeight;
 
   if (totalTravel <= 0) return;
@@ -242,11 +242,9 @@ function initLanguagesConstellation() {
   const hub = document.querySelector('.languages-hub');
   if (!container || !svg || !hub) return;
 
-
   function updateLines() {
     const cRect = container.getBoundingClientRect();
     const hRect = hub.getBoundingClientRect();
-
     if (cRect.width === 0 || cRect.height === 0) return;
 
     svg.setAttribute('viewBox', `0 0 ${cRect.width} ${cRect.height}`);
@@ -271,19 +269,19 @@ function initLanguagesConstellation() {
       // Determinamos el punto objetivo en el texto (centrado armonioso)
       let hx, hy;
       if (flagKey === 'turkey') {
-        hx = tRect.left - cRect.left + 50;
+        hx = tRect.left - cRect.left + 40;
         hy = tRect.top - cRect.top + tRect.height * 0.72;
       } else if (flagKey === 'usa') {
         hx = tRect.left - cRect.left + tRect.width * 0.45;
         hy = tRect.top - cRect.top;
       } else if (flagKey === 'italy') {
         hx = tRect.left - cRect.left + tRect.width * 0.85;
-        hy = tRect.top - cRect.top + 16;
+        hy = tRect.top - cRect.top + 12;
       } else if (flagKey === 'france') {
-        hx = dRect.left - cRect.left + 35;
+        hx = dRect.left - cRect.left + 28;
         hy = dRect.bottom - cRect.top;
       } else if (flagKey === 'spain') {
-        hx = dRect.right - cRect.left - 35;
+        hx = dRect.right - cRect.left - 28;
         hy = dRect.bottom - cRect.top;
       } else {
         hx = hRect.left - cRect.left + hRect.width / 2;
@@ -298,7 +296,7 @@ function initLanguagesConstellation() {
       const dotY = fy + r * Math.sin(angle);
 
       // Margen de separación para que la línea no quede pegada al texto
-      const textGap = 28;
+      const textGap = 22;
       const endX = hx - Math.cos(angle) * textGap;
       const endY = hy - Math.sin(angle) * textGap;
 
@@ -321,7 +319,7 @@ function initLanguagesConstellation() {
       const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       dot.setAttribute('cx', dotX);
       dot.setAttribute('cy', dotY);
-      dot.setAttribute('r', '4.5');
+      dot.setAttribute('r', '3.8');
       dot.setAttribute('fill', '#C52929');
 
       g.appendChild(line);

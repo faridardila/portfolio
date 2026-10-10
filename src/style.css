@@ -14,7 +14,7 @@
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'Inter', sans-serif;
 
-  --container-width: 1140px; 
+  --container-width: 960px; 
 }
 
 *, *::before, *::after {
@@ -36,7 +36,7 @@ body.welcome-active {
 }
 
 section {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 90px;
 }
 
 /* ==========================================================================
@@ -67,12 +67,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 140px;
+  min-height: 110px;
 }
 
 .welcome-text {
   font-family: var(--font-script);
-  font-size: 110px;
+  font-size: 88px;
   font-weight: 400;
   color: var(--color-primary);
   line-height: 1;
@@ -81,7 +81,7 @@ section {
 
 .welcome-cursor {
   font-family: var(--font-script);
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 300;
   color: var(--color-primary);
   margin-left: 2px;
@@ -101,11 +101,11 @@ section {
 
 .welcome-scroll-btn {
   position: absolute;
-  bottom: 40px;
+  bottom: 32px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 8px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,7 +115,7 @@ section {
 
 .welcome-scroll-btn .scroll-text {
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 400;
   color: #8c887f;
   letter-spacing: 0.5px;
@@ -167,7 +167,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 16px 48px;
   background-color: rgba(241, 239, 232, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -177,10 +177,10 @@ section {
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 16px 24px;
+    padding: 14px 20px;
   }
   .nav-links {
-    gap: 20px;
+    gap: 18px;
   }
 }
 
@@ -191,7 +191,7 @@ section {
 }
 
 .logo img {
-  height: 44px;
+  height: 36px;
   width: auto;
   display: block;
   transition: transform 0.25s ease, opacity 0.2s ease;
@@ -204,13 +204,13 @@ section {
 .nav-links{
   list-style-type: none;
   display: flex;
-  gap: 40px;
+  gap: 32px;
 }
 
 .nav-links a{
   text-decoration: none;
   color: var(--color-text-main);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -222,13 +222,13 @@ section {
 .hero{
   max-width: var(--container-width);
   margin: 0 auto;
-  margin-top: 180px;
+  margin-top: 140px;
 }
 
 .hero-card{
   background: var(--color-primary);
-  height: 365px;
-  border-radius: 32px;
+  height: 310px;
+  border-radius: 26px;
   box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.25);
   position: relative;
 }
@@ -240,7 +240,7 @@ section {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  border-radius: 32px;
+  border-radius: 26px;
   z-index: 1;
 }
 
@@ -249,14 +249,14 @@ section {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 450px;
+  height: 380px;
   z-index: 3;
 }
 
 .first-name, .last-name{
   position: absolute;
   color: var(--color-text-white);
-  font-size: 90px;
+  font-size: 72px;
   font-weight: 700;
   font-family: var(--font-heading);
   z-index: 2;
@@ -264,33 +264,33 @@ section {
 
 .first-name{
   top: 10px;
-  left: 50px;
+  left: 40px;
 }
 
 .last-name{
   bottom: 10px;
-  right: 50px;
+  right: 40px;
 }
 
 .hero-details{
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .hero-roles{
   display: flex;
   justify-content: space-between;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 400;
   color: var(--color-text-main);
   font-family: var(--font-body);
 }
 
 .hero-bio {
-  margin-top: 16px;
-  line-height: 1.5;
+  margin-top: 14px;
+  line-height: 1.65;
   font-family: var(--font-mono);
-  font-size: 1.1rem;
-  color: 16px;
+  font-size: 1.02rem;
+  color: var(--color-text-main);
   text-align: justify;
   opacity: 0.92;
 }
@@ -298,18 +298,18 @@ section {
 .projects{
   margin: 0 auto;
   max-width: var(--container-width);
-  margin-top: 120px;
+  margin-top: 100px;
 }
 
 .projects-title-section{
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
 }
 
 .projects-title{
   color: #C52929;
   font-family: var(--font-heading);
-  font-size: 64px;
+  font-size: 52px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -320,7 +320,7 @@ section {
 .script-text{
   color: #C52929;
   font-family: "Reenie Beanie";
-  font-size: 80px;
+  font-size: 64px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -335,7 +335,7 @@ section {
 .typewriter-cursor {
   font-family: var(--font-script);
   color: var(--color-primary);
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 300;
   margin-left: 3px;
   animation: cursor-blink 0.75s step-start infinite;
@@ -348,7 +348,7 @@ section {
 .projects-subtitle{
   color: #000;
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 16px;
   color: var(--color-primary);
   font-style: normal;
   font-weight: 300;
@@ -358,9 +358,9 @@ section {
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; 
-  gap: 24px;
-  max-width: 900px; /* Tamaño más compacto y controlado */
-  margin: 48px auto 0;
+  gap: 20px;
+  max-width: 760px; /* Tamaño más compacto y controlado */
+  margin: 38px auto 0;
 }
 
 .project-card {
@@ -368,7 +368,7 @@ section {
   color: inherit;
   display: flex;
   flex-direction: column;
-  border-radius: 28px;
+  border-radius: 24px;
   border: 1px solid var(--color-border);
   background: var(--color-card-bg);
   overflow: hidden;
@@ -392,7 +392,7 @@ section {
 
 .project-card .card-media {
   background: var(--color-card-accent);
-  padding: 16px;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -401,12 +401,12 @@ section {
 
 .project-card.featured .card-media {
   flex: 0 0 45%;
-  padding: 16px;
+  padding: 14px;
 }
 
 .project-card.featured .card-content {
   flex: 1;
-  padding: 24px 32px;
+  padding: 20px 26px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -416,50 +416,50 @@ section {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
 .project-card:not(.featured) .card-media img {
-  height: 170px;
+  height: 140px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
 }
 
 .project-card .card-content {
-  padding: 20px 24px;
+  padding: 16px 20px;
 }
 
 .project-card .card-content h3 {
   color: #000;
   font-family: var(--font-body);
-  font-size: 28px;
+  font-size: 23px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .project-card .card-content p {
   color: #746f67;
   font-family: var(--font-body);
-  font-size: 15.5px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.55;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .project-card .card-tags {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .project-card .card-tags span {
   background: var(--color-card-bg);
   border: 1px solid #c8c8c8;
-  border-radius: 8px;
-  padding: 4px 12px;
+  border-radius: 6px;
+  padding: 3px 10px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 500;
   color: #2b3a4a;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -468,17 +468,17 @@ section {
 .experience {
   position: relative;
   height: 300vh;
-  margin-top: 160px;
+  margin-top: 130px;
 }
 
 .experience-container {
   position: sticky;
-  top: 100px;
+  top: 85px;
   max-width: var(--container-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 48px;
   align-items: stretch; /* Se estiran para tener exactamente la misma altura */
 }
 
@@ -494,45 +494,45 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Llena toda la altura sin deformarse */
-  border-radius: 35px;
+  border-radius: 28px;
   display: block;
   transition: opacity 0.3s ease;
 }
 
 .experience-header {
-  margin-bottom: 32px;
+  margin-bottom: 26px;
 }
 
 .experience-header h2 {
   font-family: var(--font-heading);
   color: var(--color-primary);
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .experience-intro {
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 14.5px;
   line-height: 1.6;
   color: var(--color-primary);
   opacity: 0.85;
-  max-width: 480px;
+  max-width: 400px;
 }
 
 /* Timeline con línea continua de fondo */
 .timeline-list {
   position: relative;
   border-left: 2px solid #F8C3BE; /* Línea suave que recorre toda la lista */
-  padding-left: 28px;
-  margin-top: 24px;
+  padding-left: 24px;
+  margin-top: 20px;
 }
 
 .timeline-item {
   position: relative;
-  padding: 12px 0;
-  margin-bottom: 36px;
+  padding: 10px 0;
+  margin-bottom: 28px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -541,7 +541,7 @@ section {
 .timeline-title {
   font-family: var(--font-heading);
   color: #F49D94;
-  font-size: 26px;
+  font-size: 21px;
   font-weight: 700;
   transition: all 0.3s ease;
 }
@@ -556,10 +556,10 @@ section {
 
 .timeline-body p {
   font-family: var(--font-body);
-  font-size: 15.5px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.55;
   color: var(--color-primary);
-  max-width: 440px;
+  max-width: 370px;
 }
 
 /* ==========================================================================
@@ -567,7 +567,7 @@ section {
    ========================================================================== */
 .timeline-item.active .timeline-title {
   color: var(--color-primary);
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 800;
 }
 
@@ -575,7 +575,7 @@ section {
 .timeline-item.active::before {
   content: '';
   position: absolute;
-  left: -30px; /* Se alinea justo sobre la línea border-left */
+  left: -26px; /* Se alinea justo sobre la línea border-left (24px padding + 2px borde) */
   top: 0;
   bottom: 0;
   width: 4px;
@@ -586,7 +586,7 @@ section {
 .timeline-item.active .timeline-body {
   max-height: 250px;
   opacity: 1;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 /* ==========================================================================
@@ -594,15 +594,15 @@ section {
    ========================================================================== */
 .languages {
   max-width: var(--container-width);
-  margin: 140px auto 100px;
-  padding: 0 24px;
+  margin: 110px auto 80px;
+  padding: 0 20px;
   position: relative;
 }
 
 .languages-container {
   position: relative;
   width: 100%;
-  height: 680px;
+  height: 540px;
   margin: 0 auto;
 }
 
@@ -625,7 +625,7 @@ section {
 }
 
 .constellation-connection.highlight line {
-  stroke-width: 3.5;
+  stroke-width: 3;
 }
 
 /* Hub Central */
@@ -634,7 +634,7 @@ section {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) !important;
-  width: 360px;
+  width: 300px;
   max-width: 90%;
   z-index: 2;
   text-align: center;
@@ -642,18 +642,18 @@ section {
 
 .languages-title {
   font-family: var(--font-heading);
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--color-primary);
   line-height: 1.1;
   letter-spacing: -0.5px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 .languages-title .script-text {
   font-family: var(--font-script);
-  font-size: 80px;
+  font-size: 64px;
   font-weight: 400;
   color: var(--color-primary);
   line-height: 0.85;
@@ -663,8 +663,8 @@ section {
 
 .languages-desc {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 12.5px;
+  line-height: 1.55;
   color: var(--color-primary);
   font-weight: 400;
   text-align: center;
@@ -690,13 +690,13 @@ section {
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1 / 1;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
   background: #ffffff;
 }
 
 .flag-node:hover .flag-circle {
-  box-shadow: 0 14px 34px rgba(197, 41, 41, 0.22);
+  box-shadow: 0 12px 28px rgba(197, 41, 41, 0.22);
 }
 
 .flag-circle img {
@@ -719,8 +719,8 @@ section {
   top: 34%;
 }
 .flag-turkey .flag-circle {
-  width: 175px;
-  height: 175px;
+  width: 140px;
+  height: 140px;
 }
 
 .flag-usa {
@@ -728,8 +728,8 @@ section {
   top: 3%;
 }
 .flag-usa .flag-circle {
-  width: 118px;
-  height: 118px;
+  width: 95px;
+  height: 95px;
 }
 
 .flag-italy {
@@ -737,8 +737,8 @@ section {
   top: 6%;
 }
 .flag-italy .flag-circle {
-  width: 142px;
-  height: 142px;
+  width: 114px;
+  height: 114px;
 }
 
 .flag-france {
@@ -746,8 +746,8 @@ section {
   top: 71%;
 }
 .flag-france .flag-circle {
-  width: 108px;
-  height: 108px;
+  width: 86px;
+  height: 86px;
 }
 
 .flag-spain {
@@ -755,20 +755,20 @@ section {
   top: 57%;
 }
 .flag-spain .flag-circle {
-  width: 162px;
-  height: 162px;
+  width: 130px;
+  height: 130px;
 }
 
 /* Tooltip elegante al pasar el cursor */
 .flag-tooltip {
   position: absolute;
-  bottom: -30px;
+  bottom: -26px;
   background: #2b3a4a;
   color: #ffffff;
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 3px 8px;
+  border-radius: 5px;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   opacity: 0;
   transform: translateY(4px);
@@ -789,8 +789,8 @@ section {
   width: 100%;
   overflow: hidden;
   user-select: none;
-  padding: 36px 0 16px;
-  margin-top: 100px;
+  padding: 28px 0 14px;
+  margin-top: 80px;
 }
 
 .marquee-track {
@@ -809,7 +809,7 @@ section {
   align-items: center;
   flex-shrink: 0;
   font-family: var(--font-body);
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 200;
   letter-spacing: -0.5px;
   color: var(--color-text-main);
@@ -822,7 +822,7 @@ section {
 }
 
 .marquee-dot {
-  margin: 0 20px;
+  margin: 0 16px;
   color: var(--color-text-main);
   opacity: 0.6;
 }
@@ -843,14 +843,14 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 60px;
+  padding: 24px 48px;
   border-top: 1px solid var(--color-border);
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .footer-copy {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 400;
   color: #746f67;
 }
@@ -858,7 +858,7 @@ section {
 .footer-socials {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .social-link {
@@ -867,8 +867,8 @@ section {
   justify-content: center;
   color: var(--color-text-main);
   text-decoration: none;
-  padding: 6px;
-  border-radius: 8px;
+  padding: 5px;
+  border-radius: 6px;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
