@@ -201,7 +201,7 @@ section {
 .hero{
   max-width: var(--container-width);
   margin: 0 auto;
-  margin-top: 140px;
+  margin-top: 180px;
 }
 
 .hero-card{
@@ -265,10 +265,10 @@ section {
 }
 
 .hero-bio {
-  margin-top: 14px;
+  margin-top: 30px;
   line-height: 1.65;
   font-family: var(--font-mono);
-  font-size: 1.02rem;
+  font-size: 0.92rem;
   color: var(--color-text-main);
   text-align: justify;
   opacity: 0.92;
