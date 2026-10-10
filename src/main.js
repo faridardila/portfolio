@@ -190,7 +190,7 @@ function updateExperienceScroll() {
   if (!expSection || timelineItems.length === 0) return;
 
   const rect = expSection.getBoundingClientRect();
-  const topStickyOffset = 85;
+  const topStickyOffset = window.innerWidth <= 768 ? 70 : 85;
   const totalTravel = rect.height - window.innerHeight;
 
   if (totalTravel <= 0) return;
@@ -250,6 +250,7 @@ function initLanguagesConstellation() {
     svg.setAttribute('viewBox', `0 0 ${cRect.width} ${cRect.height}`);
     svg.innerHTML = '';
 
+    const isMobile = window.innerWidth <= 768;
     const titleEl = hub.querySelector('.languages-title');
     const descEl = hub.querySelector('.languages-desc');
     const tRect = titleEl ? titleEl.getBoundingClientRect() : hRect;
@@ -269,19 +270,19 @@ function initLanguagesConstellation() {
       // Determinamos el punto objetivo en el texto (centrado armonioso)
       let hx, hy;
       if (flagKey === 'turkey') {
-        hx = tRect.left - cRect.left + 40;
+        hx = tRect.left - cRect.left + (isMobile ? 18 : 40);
         hy = tRect.top - cRect.top + tRect.height * 0.72;
       } else if (flagKey === 'usa') {
         hx = tRect.left - cRect.left + tRect.width * 0.45;
         hy = tRect.top - cRect.top;
       } else if (flagKey === 'italy') {
-        hx = tRect.left - cRect.left + tRect.width * 0.85;
-        hy = tRect.top - cRect.top + 12;
+        hx = tRect.left - cRect.left + tRect.width * (isMobile ? 0.9 : 0.85);
+        hy = tRect.top - cRect.top + (isMobile ? 8 : 12);
       } else if (flagKey === 'france') {
-        hx = dRect.left - cRect.left + 28;
+        hx = dRect.left - cRect.left + (isMobile ? 18 : 28);
         hy = dRect.bottom - cRect.top;
       } else if (flagKey === 'spain') {
-        hx = dRect.right - cRect.left - 28;
+        hx = dRect.right - cRect.left - (isMobile ? 18 : 28);
         hy = dRect.bottom - cRect.top;
       } else {
         hx = hRect.left - cRect.left + hRect.width / 2;
@@ -296,7 +297,7 @@ function initLanguagesConstellation() {
       const dotY = fy + r * Math.sin(angle);
 
       // Margen de separación para que la línea no quede pegada al texto
-      const textGap = 22;
+      const textGap = isMobile ? 14 : 22;
       const endX = hx - Math.cos(angle) * textGap;
       const endY = hy - Math.sin(angle) * textGap;
 
@@ -311,15 +312,15 @@ function initLanguagesConstellation() {
       line.setAttribute('x2', endX);
       line.setAttribute('y2', endY);
       line.setAttribute('stroke', '#C52929');
-      line.setAttribute('stroke-width', '2');
-      line.setAttribute('stroke-dasharray', '4 5');
+      line.setAttribute('stroke-width', isMobile ? '1.4' : '1.8');
+      line.setAttribute('stroke-dasharray', isMobile ? '3 4' : '4 5');
       line.setAttribute('stroke-linecap', 'round');
 
       // Punto rojo sólido en el borde de la bandera
       const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       dot.setAttribute('cx', dotX);
       dot.setAttribute('cy', dotY);
-      dot.setAttribute('r', '3.8');
+      dot.setAttribute('r', isMobile ? '2.8' : '3.8');
       dot.setAttribute('fill', '#C52929');
 
       g.appendChild(line);
